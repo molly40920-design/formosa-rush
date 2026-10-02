@@ -640,7 +640,7 @@
     chunks.clear();
     buildWorldWalls();
     buildFloodZones();
-    await tick(1, '完成');
+    await tick(1, '整理街道');
   };
 
   // ----- markings: center lines, lane dashes, crosswalks, ped-street paving

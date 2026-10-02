@@ -1110,11 +1110,15 @@
       await Promise.race([document.fonts.load(`900 40px "Noto Sans TC"`, '牛肉麵KTV旅社當舖眼鏡珍珠奶茶牙醫小吃通訊行按摩鹽酥雞診所補習班滷肉飯刺青電影院網咖火鍋檳榔彩券藥局麻辣鍋刈包豆花便當卡拉茶行銀樓蚵仔煎理髮麵線熱炒老王阿嬤大腸包小腸林記好運正宗胡椒餅春水飲明亮全民大台北金好吃一鍋入魂巷口籠專賣姨早餐店通訊快樂幸福夜貓子超級星光黑糖花園同電器財燒臘溫州餛飩水果手搖料自助洗衣中藥地方咖啡台北車站西門紅樓町自由廣場國家戲劇院音樂廳捷運醫院警察局市百貨'), new Promise((r) => setTimeout(r, 2500))]);
     } catch (e) {}
     G.initRenderer($('#game'));
-    await Regions.load(Regions.order.includes(G.save.region) ? G.save.region : 'taipei', (p, m) => { bar.style.width = `${Math.round(p * 100)}%`; msg.textContent = m; });
+    await Regions.load(Regions.order.includes(G.save.region) ? G.save.region : 'taipei', (p, m) => { bar.style.width = `${Math.round(p * 90)}%`; msg.textContent = m; });
     UI.weapon();
+    bar.style.width = '94%';
     msg.textContent = '暖機中';
     await new Promise((r) => setTimeout(r, 30));
     G.prewarm();
+    bar.style.width = '100%';
+    msg.textContent = '完成';
+    await new Promise((r) => setTimeout(r, 250));
     title.on = false;
     $('#title').hidden = true;
     $('#hud').hidden = false;

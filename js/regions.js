@@ -673,9 +673,10 @@
     await new Promise((r) => setTimeout(r, 350));
     let ok = false, stuck = false;
     try {
-      await RG.load(to, (p) => { bar.style.width = `${Math.round(p * 100)}%`; });
+      await RG.load(to, (p) => { bar.style.width = `${Math.round(p * 90)}%`; });
       RG.arrive(from, via, carry);
       G.prewarm();
+      bar.style.width = "100%";
       G.save.region = to;
       G.time += KM[from][to] * (via === 'train' ? 0.9 : 1.2); // the trip takes a while
       G.saveGame();
